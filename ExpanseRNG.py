@@ -12,351 +12,54 @@ class color:
     UNDERLINE = '\033[4m'
     END = '\033[0m'
 
-#abilities
-#stats = {
-   # "Accuracy": random.randint(-2,4),
-  #  "Constitution": random.randint(-2,4),
- #   "Fighting": random.randint(-2,4),
-  #  "Communication": random.randint(-2,4),
- #   "Dexterity": random.randint(-2,4),
- #   "Intelligence": random.randint(-2,4),
- #   "Perception": random.randint(-2,4),
- #   "Strength": random.randint(-2,4),
- #   "Willpower": random.randint(-2,4),
-    
 
+from random import randint
+# define mapping between roll values and corresponding stat values
+STAT_MAP = {
+    3: -2,
+    4: -1,
+    5: -1,
+    6: 0,
+    7: 0,
+    8: 0,
+    9: 1,
+    10: 1,
+    11: 1,
+    12: 2,
+    13: 2,
+    14: 2,
+    15: 3,
+    16: 3,
+    17: 3,
+    18: 4,
+}
 
-  #  }
+# generate random stats
+AccRand, ConRand, FigRand, ComRand, DexRand, IntRand, PerRand, StrRand, WilRand = [
+    randint(3, 18) for _ in range(9)
+]
 
-#Generate Stats
-AccRand = random.randint(3,18)
-ConRand = random.randint(3,18)
-FigRand = random.randint(3,18)
-ComRand = random.randint(3,18)
-DexRand = random.randint(3,18)
-IntRand = random.randint(3,18)
-PerRand = random.randint(3,18)
-StrRand = random.randint(3,18)
-WilRand = random.randint(3,18)
+# convert rolls to stat values
+AccValue = STAT_MAP[AccRand]
+ConValue = STAT_MAP[ConRand]
+FigValue = STAT_MAP[FigRand]
+ComValue = STAT_MAP[ComRand]
+DexValue = STAT_MAP[DexRand]
+IntValue = STAT_MAP[IntRand]
+PerValue = STAT_MAP[PerRand]
+StrValue = STAT_MAP[StrRand]
+WilValue = STAT_MAP[WilRand]
 
-#Converting Accuracy roll to a stat value
-if AccRand == 3:
-    AccValue = "-2"
-elif AccRand == 4:
-    AccValue = "-1"
-elif AccRand == 5:
-    AccValue = "-1"
-elif AccRand == 6:
-    AccValue = "0"
-elif AccRand == 7:
-    AccValue = "0"
-elif AccRand == 8:
-    AccValue = "0"
-elif AccRand == 9:
-    AccValue = "1"
-elif AccRand == 10:
-    AccValue = "1"
-elif AccRand == 11:
-    AccValue = "1"
-elif AccRand == 12:
-    AccValue = "2"
-elif AccRand == 13:
-    AccValue = "2"
-elif AccRand == 14:
-    AccValue = "2"
-elif AccRand == 15:
-    AccValue = "3"
-elif AccRand == 16:
-    AccValue = "3"
-elif AccRand == 17:
-    AccValue = "3"
-elif AccRand == 18:
-    AccValue = "4"
-
-
-#Converting Constitution roll to a stat value
-if ConRand == 3:
-    ConValue = "-2"
-elif ConRand == 4:
-    ConValue = "-1"
-elif ConRand == 5:
-    ConValue = "-1"
-elif ConRand == 6:
-    ConValue = "0"
-elif ConRand == 7:
-    ConValue = "0"
-elif ConRand == 8:
-    ConValue = "0"
-elif ConRand == 9:
-    ConValue = "1"
-elif ConRand == 10:
-    ConValue = "1"
-elif ConRand == 11:
-    ConValue = "1"
-elif ConRand == 12:
-    ConValue = "2"
-elif ConRand == 13:
-    ConValue = "2"
-elif ConRand == 14:
-    ConValue = "2"
-elif ConRand == 15:
-    ConValue = "3"
-elif ConRand == 16:
-    ConValue = "3"
-elif ConRand == 17:
-    ConValue = "3"
-elif ConRand == 18:
-    ConValue = "4"
-
-#Converting Fighting roll to a stat value
-if FigRand == 3:
-    FigValue = "-2"
-elif FigRand == 4:
-    FigValue = "-1"
-elif FigRand == 5:
-    FigValue = "-1"
-elif FigRand == 6:
-    FigValue = "0"
-elif FigRand == 7:
-    FigValue = "0"
-elif FigRand == 8:
-    FigValue = "0"
-elif FigRand == 9:
-    FigValue = "1"
-elif FigRand == 10:
-    FigValue = "1"
-elif FigRand == 11:
-    FigValue = "1"
-elif FigRand == 12:
-    FigValue = "2"
-elif FigRand == 13:
-    FigValue = "2"
-elif FigRand == 14:
-    FigValue = "2"
-elif FigRand == 15:
-    FigValue = "3"
-elif FigRand == 16:
-    FigValue = "3"
-elif FigRand == 17:
-    FigValue = "3"
-elif FigRand == 18:
-    FigValue = "4"
-
-#Converting Communication roll to a stat value
-if ComRand == 3:
-    ComValue = "-2"
-elif ComRand == 4:
-    ComValue = "-1"
-elif ComRand == 5:
-    ComValue = "-1"
-elif ComRand == 6:
-    ComValue = "0"
-elif ComRand == 7:
-    ComValue = "0"
-elif ComRand == 8:
-    ComValue = "0"
-elif ComRand == 9:
-    ComValue = "1"
-elif ComRand == 10:
-    ComValue = "1"
-elif ComRand == 11:
-    ComValue = "1"
-elif ComRand == 12:
-    ComValue = "2"
-elif ComRand == 13:
-    ComValue = "2"
-elif ComRand == 14:
-    ComValue = "2"
-elif ComRand == 15:
-    ComValue = "3"
-elif ComRand == 16:
-    ComValue = "3"
-elif ComRand == 17:
-    ComValue = "3"
-elif ComRand == 18:
-    ComValue = "4"
-
-#Converting Dexterity roll to a stat value
-if DexRand == 3:
-    DexValue = "-2"
-elif DexRand == 4:
-    DexValue = "-1"
-elif DexRand == 5:
-    DexValue = "-1"
-elif DexRand == 6:
-    DexValue = "0"
-elif DexRand == 7:
-    DexValue = "0"
-elif DexRand == 8:
-    DexValue = "0"
-elif DexRand == 9:
-    DexValue = "1"
-elif DexRand == 10:
-    DexValue = "1"
-elif DexRand == 11:
-    DexValue = "1"
-elif DexRand == 12:
-    DexValue = "2"
-elif DexRand == 13:
-    DexValue = "2"
-elif DexRand == 14:
-    DexValue = "2"
-elif DexRand == 15:
-    DexValue = "3"
-elif DexRand == 16:
-    DexValue = "3"
-elif DexRand == 17:
-    DexValue = "3"
-elif DexRand == 18:
-    DexValue = "4"
-
-#Converting Intelligence roll to a stat value
-if IntRand == 3:
-    IntValue = "-2"
-elif IntRand == 4:
-    IntValue = "-1"
-elif IntRand == 5:
-    IntValue = "-1"
-elif IntRand == 6:
-    IntValue = "0"
-elif IntRand == 7:
-    IntValue = "0"
-elif IntRand == 8:
-    IntValue = "0"
-elif IntRand == 9:
-    IntValue = "1"
-elif IntRand == 10:
-    IntValue = "1"
-elif IntRand == 11:
-    IntValue = "1"
-elif IntRand == 12:
-    IntValue = "2"
-elif IntRand == 13:
-    IntValue = "2"
-elif IntRand == 14:
-    IntValue = "2"
-elif IntRand == 15:
-    IntValue = "3"
-elif IntRand == 16:
-    IntValue = "3"
-elif IntRand == 17:
-    IntValue = "3"
-elif IntRand == 18:
-    IntValue = "4"
-
-#Converting Perception roll to a stat value
-if PerRand == 3:
-    PerValue = "-2"
-elif PerRand == 4:
-    PerValue = "-1"
-elif PerRand == 5:
-    PerValue = "-1"
-elif PerRand == 6:
-    PerValue = "0"
-elif PerRand == 7:
-    PerValue = "0"
-elif PerRand == 8:
-    PerValue = "0"
-elif PerRand == 9:
-    PerValue = "1"
-elif PerRand == 10:
-    PerValue = "1"
-elif PerRand == 11:
-    PerValue = "1"
-elif PerRand == 12:
-    PerValue = "2"
-elif PerRand == 13:
-    PerValue = "2"
-elif PerRand == 14:
-    PerValue = "2"
-elif PerRand == 15:
-    PerValue = "3"
-elif PerRand == 16:
-    PerValue = "3"
-elif PerRand == 17:
-    PerValue = "3"
-elif PerRand == 18:
-    PerValue = "4"
-
-#Converting Strength roll to a stat value
-if StrRand == 3:
-    StrValue = "-2"
-elif StrRand == 4:
-    StrValue = "-1"
-elif StrRand == 5:
-    StrValue = "-1"
-elif StrRand == 6:
-    StrValue = "0"
-elif StrRand == 7:
-    StrValue = "0"
-elif StrRand == 8:
-    StrValue = "0"
-elif StrRand == 9:
-    StrValue = "1"
-elif StrRand == 10:
-    StrValue = "1"
-elif StrRand == 11:
-    StrValue = "1"
-elif StrRand == 12:
-    StrValue = "2"
-elif StrRand == 13:
-    StrValue = "2"
-elif StrRand == 14:
-    StrValue = "2"
-elif StrRand == 15:
-    StrValue = "3"
-elif StrRand == 16:
-    StrValue = "3"
-elif StrRand == 17:
-    StrValue = "3"
-elif StrRand == 18:
-    StrValue = "4"
-
-#Converting Willpower roll to a stat value
-if WilRand == 3:
-    WilValue = "-2"
-elif WilRand == 4:
-    WilValue = "-1"
-elif WilRand == 5:
-    WilValue = "-1"
-elif WilRand == 6:
-    WilValue = "0"
-elif WilRand == 7:
-    WilValue = "0"
-elif WilRand == 8:
-    WilValue = "0"
-elif WilRand == 9:
-    WilValue = "1"
-elif WilRand == 10:
-    WilValue = "1"
-elif WilRand == 11:
-    WilValue = "1"
-elif WilRand == 12:
-    WilValue = "2"
-elif WilRand == 13:
-    WilValue = "2"
-elif WilRand == 14:
-    WilValue = "2"
-elif WilRand == 15:
-    WilValue = "3"
-elif WilRand == 16:
-    WilValue = "3"
-elif WilRand == 17:
-    WilValue = "3"
-elif WilRand == 18:
-    WilValue = "4"
-
-
-#Shows the Character ability scores
-print(color.BOLD + "Accuracy: " + color.END + AccValue)
-print(color.BOLD + "Constitution: " + color.END + ConValue)
-print(color.BOLD + "Fighting: " + color.END + FigValue)
-print(color.BOLD + "Communication: " + color.END + ComValue)
-print(color.BOLD + "Dexterity: " + color.END + DexValue)
-print(color.BOLD + "Intelligence: " + color.END + IntValue)
-print(color.BOLD + "Perception: " + color.END + PerValue)
-print(color.BOLD + "Strength: " + color.END + StrValue)
-print(color.BOLD + "Willpower: " + color.END + WilValue)
+print(color.BOLD + "Attribute Values: " + color.END)
+print(color.BOLD + "Accuracy: " + color.END + str(AccValue))
+print(color.BOLD + "Constitution: " + color.END + str(ConValue))
+print(color.BOLD + "Fighting: " + color.END + str(FigValue))
+print(color.BOLD + "Communication: " + color.END + str(ComValue))
+print(color.BOLD + "Dexterity: " + color.END + str(DexValue))
+print(color.BOLD + "Intelligence: " + color.END + str(IntValue))
+print(color.BOLD + "Perception: " + color.END + str(PerValue))
+print(color.BOLD + "Strength: " + color.END + str(StrValue))
+print(color.BOLD + "Willpower: " + color.END + str(WilValue))
 
 
 
